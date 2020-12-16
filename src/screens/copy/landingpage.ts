@@ -3,7 +3,7 @@ import { color } from "react-native-reanimated";
 import { moderateScale, scale, verticalScale } from "react-native-size-matters";
 import { FontFamily } from "../../stylings/typography/typography";
 
-const maindivlanding = StyleSheet.c dreate({
+const CopyPageStyles = StyleSheet.create({
 
     maindiv: {
         width: moderateScale(400),
@@ -26,6 +26,3 @@ const maindivlanding = StyleSheet.c dreate({
 
 });
 
-export const LandingPageStyles = {
-    maindivlanding
-}

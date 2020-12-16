@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, SafeAreaView, StatusBar, Button, Alert, } from "react-native";
-import { SvgUri } from "react-native-svg";
+import SvgUri from 'react-native-svg-uri';
+
 import { GeneralColor } from "../../stylings/general/colors";
 import { LandingPageStyles } from "./landingpage";
 import OnboardingImage from '../../../assets/images/svg/onboarding.svg';
@@ -13,9 +14,9 @@ import { useNavigation } from "@react-navigation/native";
 export const LandingScreen = () => {
     const { navigate } = useNavigation();
 
-    const gotoGetStarted = (tit:string='') => {
-        Alert.alert(tit);
-        navigate("LoginScreen")
+    const gotoGetStarted = () => {
+
+        navigate("GettingStartedScreen")
     }
     return (
         <>
@@ -27,13 +28,16 @@ export const LandingScreen = () => {
                         <OnboardingImage style={{ marginTop: verticalScale(40) }} />
                         <Text
                             style={[LandingPageStyles.maindivlanding.welcomeTextInfo]}>
-                            Health is wealth, therefore take care of your health</Text>
+                            Health is wealth,  therefore take care of your health</Text>
+                      
                     </View>
+       
                     <View style={{ width: '100%', marginTop: moderateScale(25, 2) }}>
                         <CutomFullBotton
 
-                            title="GER STARTED"
-                            onButtonPress={()=>{gotoGetStarted('My name is tee')}}
+                            title="GET STARTED"
+                            onButtonPress={() => { gotoGetStarted() }}
+                      
                         ></CutomFullBotton>
                         <CutomFullBotton
                             margintop={10}
