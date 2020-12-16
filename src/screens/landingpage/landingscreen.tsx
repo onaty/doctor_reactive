@@ -8,8 +8,15 @@ import { ScrollView } from "react-native-gesture-handler";
 import { moderateScale, verticalScale } from "react-native-size-matters";
 import { BlockBlueButton, TextButtonWhite } from "../../stylings/buttons/buttons";
 import { CutomFullBotton } from "../../components/buttons/fullbutton";
+import { useNavigation } from "@react-navigation/native";
 
 export const LandingScreen = () => {
+    const { navigate } = useNavigation();
+
+    const gotoGetStarted = (tit:string='') => {
+        Alert.alert(tit);
+        navigate("LoginScreen")
+    }
     return (
         <>
             <StatusBar barStyle="dark-content" />
@@ -22,10 +29,11 @@ export const LandingScreen = () => {
                             style={[LandingPageStyles.maindivlanding.welcomeTextInfo]}>
                             Health is wealth, therefore take care of your health</Text>
                     </View>
-                    <View style={{ width: '100%', marginTop: moderateScale(25,2) }}>
+                    <View style={{ width: '100%', marginTop: moderateScale(25, 2) }}>
                         <CutomFullBotton
 
                             title="GER STARTED"
+                            onButtonPress={()=>{gotoGetStarted('My name is tee')}}
                         ></CutomFullBotton>
                         <CutomFullBotton
                             margintop={10}
