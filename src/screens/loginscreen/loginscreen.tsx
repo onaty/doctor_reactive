@@ -1,10 +1,24 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView, ScrollView, StatusBar } from "react-native";
+import { GeneralColor } from "../../stylings/general/colors";
+import { LandingPageStyles } from "../landingpage/landingpage";
 
-// export const HomeScreen = () => {
-//     return (
-//         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-//             <Text>Home Screen</Text>
-//         </View>
-//     );
-// }
+
+export const LoginScreen = () => {
+    const navigation = useNavigation();
+    
+    return (
+        <>
+            <StatusBar barStyle="dark-content" />
+            <SafeAreaView style={{ flex: 1, backgroundColor: GeneralColor.backgroundwhite }}>
+                <ScrollView contentContainerStyle={[LandingPageStyles.maindivlanding.maindivcontainer]} style={[LandingPageStyles.maindivlanding.maindiv]}>
+                    <View style={[LandingPageStyles.maindivlanding.innerView]} >
+                   <Text>gosd</Text>
+                    </View>
+                </ScrollView>
+            </SafeAreaView>
+        </>
+
+    );
+}
