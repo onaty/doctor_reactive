@@ -20,7 +20,7 @@ export const LandingScreen = () => {
                         <OnboardingImage style={{ marginTop: verticalScale(40) }} />
                         <Text
                             style={[LandingPageStyles.maindivlanding.welcomeTextInfo]}>
-                            health is wealth, therefore take care of your health</Text>
+                            Health is wealth, therefore take care of your health</Text>
                     </View>
                     <View style={{ width: '100%', marginTop: moderateScale(25,2) }}>
                         <CutomFullBotton

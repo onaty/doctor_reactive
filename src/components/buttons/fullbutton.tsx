@@ -13,14 +13,14 @@ export const CutomFullBotton = ({ bgColor = GeneralColor.primary, title = '', te
         borderStyle: 'solid',
         borderWidth: 1,
         display: 'flex',
-        paddingVertical: moderateScale(10),
+        paddingVertical: moderateScale(10, 0.6),
         borderRadius: moderateScale(4),
         marginTop: moderateScale(margintop, 2),
     }}>
         <Text style={{
             color: textcolor,
             fontFamily: FontFamily.OpensansBold700,
-            fontSize: scale(12),
+            fontSize: moderateScale(12, 0.3),
             alignSelf: 'center'
         }}>{title}</Text>
     </TouchableOpacity >
