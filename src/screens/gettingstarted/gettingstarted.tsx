@@ -1,7 +1,7 @@
 // In App.js in a new project
 
 import * as React from 'react';
-import { View, Text, SafeAreaView, StatusBar, Button, Alert } from 'react-native';
+import { View, Text, SafeAreaView, StatusBar, Button, Alert, Dimensions } from 'react-native';
 import { GeneralColor } from '../../stylings/general/colors';
 
 
@@ -12,7 +12,7 @@ import PhoneCallsImage from '../../../assets/images/svg/phonecalls.svg';
 import DrugsImage from '../../../assets/images/svg/drugs.svg';
 import { GettingStaetedPageStyles } from './gettingstartedpage';
 import Carousel, { Pagination, } from 'react-native-snap-carousel';
-import { moderateScale } from 'react-native-size-matters';
+import { moderateScale, scale } from 'react-native-size-matters';
 import { useNavigation } from '@react-navigation/native';
 const SliderDatas = [
     {
@@ -37,6 +37,9 @@ const SliderDatas = [
         subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt "
     }
 ]
+
+export const SLIDER_WIDTH = Dimensions.get('window').width + 80
+export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7)
 export const GettingStartedScreen = () => {
 
 
@@ -49,13 +52,14 @@ export const GettingStartedScreen = () => {
         navigate("SelectUsertypeScreen")
     }
     const nextSlide = () => {
-    
-     
+
+
         let currentSlide = index;
-       
+
         currentSlide++;
         if (currentSlide >= SliderDatas.length) {
-            currentSlide = 0;
+            gotoSelectUser();
+            return
         }
         setIndex(currentSlide)
         isCarousel.snapToItem(currentSlide);
@@ -67,12 +71,12 @@ export const GettingStartedScreen = () => {
                 <View style={[GettingStaetedPageStyles.pageview]}>
                     <View style={[GettingStaetedPageStyles.courouselview]}>
                         <Carousel
-
+                            layout={'default'}
                             ref={(c) => { isCarousel = c; }}
                             data={SliderDatas}
                             renderItem={SlidingerComponet}
-                            sliderWidth={moderateScale(700)}
-                            itemWidth={moderateScale(700)}
+                            sliderWidth={SLIDER_WIDTH}
+                            itemWidth={ITEM_WIDTH}
                             useScrollView={true}
                             onSnapToItem={(index) => setIndex(index)}
                             enableSnap={true}

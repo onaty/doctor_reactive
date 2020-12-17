@@ -3,13 +3,14 @@ import { StyleSheet } from "react-native";
 import { color } from "react-native-reanimated";
 import { moderateScale, scale, verticalScale } from "react-native-size-matters";
 import { FontFamily } from "../../stylings/typography/typography";
+import { AppDimensionLen } from '../../navigation/navigation';
 
 export const GettingStaetedPageStyles = StyleSheet.create({
 
     sliderMain: {
-        width: moderateScale(400),
+        width: '100%',
         height: verticalScale(450),
-        padding: moderateScale(40),
+        // padding: moderateScale(40),
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -49,10 +50,15 @@ export const GettingStaetedPageStyles = StyleSheet.create({
     pageview:{
         display:'flex',
         justifyContent:'space-between',
-        height:'100%'
+        height:'100%',
+        backgroundColor: GeneralColor.backgroundwhite 
     },
     courouselview:{
-       marginTop:verticalScale(30)
+       marginTop:verticalScale(30),
+       width:'100%',
+       display:'flex',
+       flexDirection:'row',
+       justifyContent:'center'
     }
 
 

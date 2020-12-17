@@ -3,5 +3,6 @@ export const GeneralColor = {
     backgroundwhite: '#ffffff',
     solidgrey:'#373737',
     white:'#ffffff',
-    black:'#000000'
+    black:'#000000',
+    anotherGrey:'#AAAAAA'
 }
