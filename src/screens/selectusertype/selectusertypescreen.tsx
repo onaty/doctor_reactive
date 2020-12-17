@@ -19,7 +19,7 @@ export const SelectUsertypeScreen = () => {
     const [usertype, setUserType] = useState(true);
     const gotoSignup = () => {
 
-        navigate("GettingStartedScreen")
+        navigate("PatientSignupScreen")
     }
     return (
         <>

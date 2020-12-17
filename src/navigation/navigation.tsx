@@ -13,6 +13,7 @@ import BackButton from '../../assets/images/svg/backButton.svg';
 import { scale } from 'react-native-size-matters';
 import { StyleSheet, Dimensions } from "react-native";
 import { useHeaderHeight } from '@react-navigation/stack';
+import { PatientSignupScreen } from '../screens/patientsignup/patientsignupscreen';
 
 const { width, height } = Dimensions.get("window");
 let headerHeight;
@@ -38,6 +39,15 @@ export const MainNavigation = () => {
         />
         <Stack.Screen name="SelectUsertypeScreen"
           component={SelectUsertypeScreen}
+          options={{
+            headerBackTitleVisible: false,
+            headerTitle: '',
+            headerBackImage: () => <BackButton />,
+            headerLeftContainerStyle: { paddingLeft: scale(10) },
+
+          }} />
+        <Stack.Screen name="PatientSignupScreen"
+          component={PatientSignupScreen}
           options={{
             headerBackTitleVisible: false,
             headerTitle: '',
