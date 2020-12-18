@@ -36,8 +36,7 @@ export const PatientSignupScreen = () => {
     const [pagetitle, setPageTitle] = useState('Personal Information');
     let [step, setStep] = useState(1);
     useEffect(() => {
-        // Update the document title using the browser API
-        console.log(step, 'all steps');
+       
         if (step >= 3) {
             gotoSignup()
         }

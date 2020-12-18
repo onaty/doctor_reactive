@@ -3,7 +3,7 @@ import { color } from "react-native-reanimated";
 import { moderateScale, scale, verticalScale } from "react-native-size-matters";
 import { FontFamily } from "../../stylings/typography/typography";
 
-const CopyPageStyles = StyleSheet.create({
+export const CopyPageStyles = StyleSheet.create({
 
     maindiv: {
         width: moderateScale(400),

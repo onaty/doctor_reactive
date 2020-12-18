@@ -16,6 +16,7 @@ import { useHeaderHeight } from '@react-navigation/stack';
 import { PatientSignupScreen } from '../screens/patientsignup/patientsignupscreen';
 import { SuccessPageScreen } from '../screens/successpage/successpagescreen';
 import { DoctorSignupScreen } from '../screens/doctorsignup/doctorsignuppscreen';
+import { DoctorsDashboardScreen } from '../screens/doctorsdashboard/doctorsdashboard';
 
 const { width, height } = Dimensions.get("window");
 let headerHeight;
@@ -42,6 +43,7 @@ export const MainNavigation = () => {
         <Stack.Screen name="SelectUsertypeScreen" component={SelectUsertypeScreen} />
         <Stack.Screen name="PatientSignupScreen" component={PatientSignupScreen} />
         <Stack.Screen name="DoctorSignupScreen" component={DoctorSignupScreen} />
+        <Stack.Screen name="DoctorsDashboardScreen" component={DoctorsDashboardScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

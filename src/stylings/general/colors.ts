@@ -5,5 +5,7 @@ export const GeneralColor = {
     white:'#ffffff',
     black:'#000000',
     anotherGrey:'#AAAAAA',
-    labels:'#454545'
+    labels:'#454545',
+    inappbackground:'#E5E5E5',
+    inappbackground2:'#DDE5ED'
 }
