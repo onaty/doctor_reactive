@@ -14,6 +14,7 @@ import { scale } from 'react-native-size-matters';
 import { StyleSheet, Dimensions } from "react-native";
 import { useHeaderHeight } from '@react-navigation/stack';
 import { PatientSignupScreen } from '../screens/patientsignup/patientsignupscreen';
+import { SuccessPageScreen } from '../screens/successpage/successpagescreen';
 
 const { width, height } = Dimensions.get("window");
 let headerHeight;
@@ -26,6 +27,7 @@ export const MainNavigation = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="LandingScreen" component={LandingScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="SuccessPageScreen" component={SuccessPageScreen} options={{ headerShown: false }} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="GettingStartedScreen" component={GettingStartedScreen}
 

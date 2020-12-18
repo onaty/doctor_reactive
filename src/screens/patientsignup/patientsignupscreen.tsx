@@ -20,7 +20,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { CutomFullBotton } from '../../components/buttons/fullbutton';
 import { useNavigation } from '@react-navigation/native';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { PatientSignupStyles } from './patientsignupstyles';
 import { ScrollView } from 'react-native-gesture-handler';
 import { GeneralColor } from '../../stylings/general/colors';
@@ -35,9 +35,17 @@ export const PatientSignupScreen = () => {
     const [usertype, setUserType] = useState('');
     const [pagetitle, setPageTitle] = useState('Personal Information');
     let [step, setStep] = useState(1);
+    useEffect(() => {
+        // Update the document title using the browser API
+        console.log(step, 'all steps');
+        if (step >= 3) {
+            gotoSignup()
+        }
+
+    });
     const gotoSignup = () => {
 
-        navigate("GettingStartedScreen")
+        navigate("SuccessPageScreen")
     }
     const gonextStep = () => {
         let next = step + 1
@@ -66,7 +74,7 @@ export const PatientSignupScreen = () => {
                     <StepOne nextstep={() => { gonextStep() }} />
                     : step == 2 ?
                         <StepTwo nextstep={() => { gonextStep() }} />
-                        : <StepThree nextstep={() => { gonextStep()}} />}
+                        : <StepThree nextstep={() => { gonextStep() }} />}
             </ScrollView>
         </>
     );
@@ -146,17 +154,17 @@ const StepThree = (props: any) => {
             <View>
                 {/* <CutomInput title="FULL NAME" onChangeText={(text: string) => setUserType(text)}
                         value={usertype} placeholder={''} /> */}
-                <CutomIconInput title="NAME ON CARD" placeholder={'*******'}  icon={<ProfileIcon style={[{}]}/>} />
+                <CutomIconInput title="NAME ON CARD" placeholder={'*******'} icon={<ProfileIcon style={[{}]} />} />
 
-                <CutomIconInput title="CARD NUMBER" placeholder={'*****'}  icon={<Checkicon/>}/>
-                <View style={[{display:'flex',flexDirection:'row',justifyContent:'space-between'}]} >
-                    <View style={[{marginRight:10,flex:1}]}>
+                <CutomIconInput title="CARD NUMBER" placeholder={'*****'} icon={<Checkicon />} />
+                <View style={[{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }]} >
+                    <View style={[{ marginRight: 10, flex: 1 }]}>
 
-                        <CutomIconInput title="CVV" placeholder={'*****'} icon={<CardIcon/>} />
+                        <CutomIconInput title="CVV" placeholder={'*****'} icon={<CardIcon />} />
                     </View>
-                    <View  style={[{flex:1}]}>
+                    <View style={[{ flex: 1 }]}>
 
-                        <CutomIconInput title="MM/YY" placeholder={'*****'}   icon={<CalenderIcon/>}/>
+                        <CutomIconInput title="MM/YY" placeholder={'*****'} icon={<CalenderIcon />} />
                     </View>
                 </View>
 
