@@ -14,13 +14,14 @@ import { FontFamily } from '../../stylings/typography/typography';
 
 
 export const CutomInput = (props: any) => {
+    let { ismargintop, setheight } = props;
 
     return (
         <>
-            <View style={[InputStyles.maindiv]}>
+            <View style={[InputStyles.maindiv, ismargintop == 'none' ? {} : { marginTop: verticalScale(14) }]}>
                 <Text style={[InputStyles.label]}>{props.title}</Text>
                 <TextInput
-                    style={[InputStyles.inputbox]}
+                    style={[InputStyles.inputbox, setheight ? { height: setheight } : {}]}
                     placeholderTextColor={GeneralColor.anotherGrey}
                     {...props}
                 />
@@ -40,8 +41,8 @@ const InputStyles = StyleSheet.create({
         // flexDirection: 'column',
         // justifyContent: 'center',
         // alignItems: 'center'
-        marginTop: verticalScale(14)
 
+        // marginTop: verticalScale(14)
     },
     label: {
         fontFamily: FontFamily.OpenSansSemiBold600,
@@ -49,11 +50,11 @@ const InputStyles = StyleSheet.create({
         lineHeight: scale(14),
         color: GeneralColor.labels,
         opacity: 0.8,
-        marginBottom: verticalScale(6)
+        marginBottom: verticalScale(6),
+        textTransform:"capitalize"
     },
     inputbox: {
         width: '100%',
-        height: moderateScale(55, 0.1),
         paddingVertical: scale(15),
         paddingHorizontal: scale(10),
         borderWidth: 1,

@@ -18,8 +18,14 @@ export const SelectUsertypeScreen = () => {
     const { navigate } = useNavigation();
     const [usertype, setUserType] = useState(true);
     const gotoSignup = () => {
+        if (usertype) {
 
-        navigate("PatientSignupScreen")
+            navigate("DoctorSignupScreen")
+        } else {
+
+            navigate("PatientSignupScreen")
+        }
+
     }
     return (
         <>
@@ -35,7 +41,7 @@ export const SelectUsertypeScreen = () => {
                     <Text style={[SelectUsertypeStyles.chooseAccounttype]}>Choose Account Type</Text>
                     <View style={[SelectUsertypeStyles.accountDocs]}>
                         <Pressable
-                            onPress={() => { setUserType(true)}}
+                            onPress={() => { setUserType(true) }}
                             style={[usertype ? SelectUsertypeStyles.selectDivfilled : SelectUsertypeStyles.selectDivempty, { marginRight: scale(15) }]} >
                             <View style={[SelectUsertypeStyles.innerView]} >
                                 <View style={[{ width: '100%' }]}>
@@ -47,8 +53,8 @@ export const SelectUsertypeScreen = () => {
                             </View>
                         </Pressable>
                         <Pressable
-                         onPress={() => { setUserType(false)}}
-                         style={[!usertype ? SelectUsertypeStyles.selectDivfilled : SelectUsertypeStyles.selectDivempty, {}]} >
+                            onPress={() => { setUserType(false) }}
+                            style={[!usertype ? SelectUsertypeStyles.selectDivfilled : SelectUsertypeStyles.selectDivempty, {}]} >
                             <View style={[SelectUsertypeStyles.innerView]} >
                                 <View style={[{ width: '100%' }]}>
                                     <View style={[!usertype ? SelectUsertypeStyles.filledStateforradio : SelectUsertypeStyles.emptyStateforradio]}>
@@ -61,7 +67,7 @@ export const SelectUsertypeScreen = () => {
                     </View>
 
                 </View>
-                <View style={{ width: '100%', paddingHorizontal: moderateScale(20, 2),marginBottom:verticalScale(30) }}>
+                <View style={{ width: '100%', paddingHorizontal: moderateScale(20, 2), marginBottom: verticalScale(30) }}>
                     <CutomFullBotton
 
                         title="NEXT"
