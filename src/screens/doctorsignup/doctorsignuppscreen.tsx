@@ -39,7 +39,7 @@ export const DoctorSignupScreen = () => {
         // Update the document title using the browser API
         console.log(step, 'all steps');
         if (step >= 3) {
-            // gotoSignup()
+            gotoSignup()
         }
 
     });
