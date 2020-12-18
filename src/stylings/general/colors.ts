@@ -4,5 +4,6 @@ export const GeneralColor = {
     solidgrey:'#373737',
     white:'#ffffff',
     black:'#000000',
-    anotherGrey:'#AAAAAA'
+    anotherGrey:'#AAAAAA',
+    labels:'#454545'
 }

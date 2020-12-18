@@ -103,6 +103,13 @@ export const PatientSignupStyles = StyleSheet.create({
         lineHeight: moderateScale(13),
         marginTop: verticalScale(2),
         marginBottom: verticalScale(0)
+    },
+    selectViewHolder:{
+        width:'100%',
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'space-between',
+        marginTop:30
     }
 
 });
