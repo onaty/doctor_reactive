@@ -14,8 +14,8 @@ const maindivlanding = StyleSheet.create({
 
     },
     innerView: {
-        // width: moderateScale(400),
-        padding: scale(30),
+        width: '100%',
+        padding: scale(10),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',

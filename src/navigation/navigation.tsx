@@ -25,38 +25,21 @@ export const MainNavigation = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          headerBackTitleVisible: false,
+          headerTitle: '',
+          headerBackImage: () => <BackButton />,
+          headerLeftContainerStyle: { paddingLeft: scale(10) },
+
+        }}
+      >
         <Stack.Screen name="LandingScreen" component={LandingScreen} options={{ headerShown: false }} />
         <Stack.Screen name="SuccessPageScreen" component={SuccessPageScreen} options={{ headerShown: false }} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
-        <Stack.Screen name="GettingStartedScreen" component={GettingStartedScreen}
-
-          options={{
-            headerBackTitleVisible: false,
-            headerTitle: '',
-            headerBackImage: () => <BackButton />,
-            headerLeftContainerStyle: { paddingLeft: scale(10) },
-
-          }}
-        />
-        <Stack.Screen name="SelectUsertypeScreen"
-          component={SelectUsertypeScreen}
-          options={{
-            headerBackTitleVisible: false,
-            headerTitle: '',
-            headerBackImage: () => <BackButton />,
-            headerLeftContainerStyle: { paddingLeft: scale(10) },
-
-          }} />
-        <Stack.Screen name="PatientSignupScreen"
-          component={PatientSignupScreen}
-          options={{
-            headerBackTitleVisible: false,
-            headerTitle: '',
-            headerBackImage: () => <BackButton />,
-            headerLeftContainerStyle: { paddingLeft: scale(10) },
-
-          }} />
+        <Stack.Screen name="GettingStartedScreen" component={GettingStartedScreen} />
+        <Stack.Screen name="SelectUsertypeScreen" component={SelectUsertypeScreen} />
+        <Stack.Screen name="PatientSignupScreen" component={PatientSignupScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

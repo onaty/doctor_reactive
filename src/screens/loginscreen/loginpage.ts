@@ -4,7 +4,7 @@ import { moderateScale, scale, verticalScale } from "react-native-size-matters";
 import { GeneralColor } from "../../stylings/general/colors";
 import { FontFamily } from "../../stylings/typography/typography";
 
-export const maindivlogin = StyleSheet.create({
+export const LoginPageStlyl= StyleSheet.create({
 
     maindiv: {
         // width: moderateScale(400),
@@ -13,5 +13,14 @@ export const maindivlogin = StyleSheet.create({
 
 
     },
-
+    title: {
+        color: GeneralColor.primary,
+        fontFamily: FontFamily.OpenSansSemiBold600,
+        textAlign: 'center',
+        textTransform: 'capitalize',
+        fontSize: moderateScale(14),
+        lineHeight: moderateScale(20),
+        marginTop: verticalScale(15),
+        marginBottom: verticalScale(6)
+    },
 });

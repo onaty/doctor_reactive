@@ -18,6 +18,10 @@ export const LandingScreen = () => {
 
         navigate("GettingStartedScreen")
     }
+    const gotoLogin= () => {
+
+        navigate("LoginScreen")
+    }
     return (
         <>
             <StatusBar barStyle="dark-content" />
@@ -44,6 +48,7 @@ export const LandingScreen = () => {
                             title="ALREADY REGISTERED? LOGIN"
                             bgColor={GeneralColor.white}
                             textcolor={GeneralColor.primary}
+                            onButtonPress={() => { gotoLogin() }}
                         ></CutomFullBotton>
                     </View>
                 </ScrollView>
