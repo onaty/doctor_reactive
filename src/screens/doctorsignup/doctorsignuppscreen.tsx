@@ -37,7 +37,7 @@ export const DoctorSignupScreen = () => {
     let [step, setStep] = useState(1);
     useEffect(() => {
       
-        if (step >= 3) {
+        if (step > 3) {
             gotoSignup()
         }
 

@@ -51,7 +51,7 @@ const SelectStyles = StyleSheet.create({
     label: {
         fontFamily: FontFamily.OpenSansSemiBold600,
         fontSize: scale(14),
-        lineHeight: scale(19),
+        lineHeight: verticalScale(19),
         color: GeneralColor.anotherGrey,
 
         marginBottom: verticalScale(6),
@@ -66,7 +66,7 @@ const SelectStyles = StyleSheet.create({
     },
     inputbox: {
         width: '100%',
-        height: moderateScale(45, 0.1),
+        height: moderateScale(45,0.2),
         paddingVertical: scale(15),
         paddingHorizontal: scale(10),
         borderWidth: 1,

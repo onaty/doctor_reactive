@@ -55,8 +55,8 @@ const InputStyles = StyleSheet.create({
     },
     inputbox: {
         width: '100%',
-        paddingVertical: scale(15),
-        paddingHorizontal: scale(10),
+        paddingVertical: moderateScale(15),
+        paddingHorizontal: moderateScale(10),
         borderWidth: 1,
         borderColor: GeneralColor.anotherGrey,
         borderStyle: 'solid',

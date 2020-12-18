@@ -6,9 +6,7 @@ import { FlatList, ScrollView, TouchableHighlight } from 'react-native-gesture-h
 import { ImageHeader } from '../../components/headers/imageicon';
 import { CustomListsView } from '../../components/lists/itemslists';
 import { DoctorsDashboardModalStyles, DoctorsDashboardScreenStyles } from './doctorsdashboardstyle';
-
 import ForwardIcon from '../../../assets/images/svg/forwardicon.svg';
-
 import LogoutIcon from '../../../assets/images/svg/logout.svg';
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import { CutomFullBotton } from '../../components/buttons/fullbutton';
@@ -16,6 +14,8 @@ import { useState } from 'react';
 import { Alert } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Modal from 'react-native-modal';
+
+
 export const DoctorsDashboardScreen = () => {
 
     const [modalVisible, setShowModal] = useState(false);
