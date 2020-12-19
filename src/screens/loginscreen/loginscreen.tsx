@@ -19,8 +19,10 @@ export const LoginScreen = () => {
     }
     const dashboard= () => {
 
-        navigate("DoctorsDashboardScreen")
-    }
+        // navigate("DoctorsDashboardScreen")
+
+        navigate("PatientsTabsStacks")
+        }
 
     return (
         <>

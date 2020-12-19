@@ -8,15 +8,24 @@ import { LandingScreen } from '../screens/landingpage/landingscreen';
 import { LoginScreen } from '../screens/loginscreen/loginscreen';
 import { GettingStartedScreen } from '../screens/gettingstarted/gettingstarted';
 import { SelectUsertypeScreen } from '../screens/selectusertype/selectusertypescreen';
-import { GeneralColor } from '../stylings/general/colors';
 import BackButton from '../../assets/images/svg/backButton.svg';
 import { scale } from 'react-native-size-matters';
-import { StyleSheet, Dimensions } from "react-native";
-import { useHeaderHeight } from '@react-navigation/stack';
+import { Dimensions } from "react-native";
 import { PatientSignupScreen } from '../screens/patientsignup/patientsignupscreen';
 import { SuccessPageScreen } from '../screens/successpage/successpagescreen';
 import { DoctorSignupScreen } from '../screens/doctorsignup/doctorsignuppscreen';
 import { DoctorsDashboardScreen } from '../screens/doctorsdashboard/doctorsdashboard';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import HomeActiveIcon from '../../assets/images/svg/tabs/HomeActiveIcon.svg';
+import HomeInactiveIcon from '../../assets/images/svg/tabs/HomeIcon.svg';
+import MessagesActiveIcon from '../../assets/images/svg/tabs/messageActiveIcon.svg';
+import MessagesInactiveIcon from '../../assets/images/svg/tabs/messageIcon.svg';
+import ApointMentsActiveIcon from '../../assets/images/svg/tabs/appointmentActiceicon.svg';
+import ApointMentsInactiveIcon from '../../assets/images/svg/tabs/appointmenticon.svg';
+import SettingsActiveIcon from '../../assets/images/svg/tabs/settingsActiveicon.svg';
+import SettingsInactiveIcon from '../../assets/images/svg/tabs/settingsicon.svg';
+import { GeneralColor } from '../stylings/general/colors';
 
 const { width, height } = Dimensions.get("window");
 let headerHeight;
@@ -44,8 +53,72 @@ export const MainNavigation = () => {
         <Stack.Screen name="PatientSignupScreen" component={PatientSignupScreen} />
         <Stack.Screen name="DoctorSignupScreen" component={DoctorSignupScreen} />
         <Stack.Screen name="DoctorsDashboardScreen" component={DoctorsDashboardScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="PatientsTabsStacks" component={PatientsTabsStacks} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
+
+
+function HomeScreen() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Home!</Text>
+    </View>
+  );
+}
+
+function SettingsScreen() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Settings!</Text>
+    </View>
+  );
+}
+
+const Tab = createBottomTabNavigator();
+
+function PatientsTabsStacks() {
+  return (
+
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let Icon;
+
+          if (route.name === 'PatientsHome') {
+            Icon = focused
+              ? <HomeActiveIcon />
+              : <HomeInactiveIcon />;
+          } else if (route.name === 'patientsMessages') {
+            Icon = focused
+              ? <MessagesActiveIcon />
+              : <MessagesInactiveIcon />;
+          } else if (route.name === 'AppointMents') {
+            Icon = focused
+              ? <ApointMentsActiveIcon />
+              : <ApointMentsInactiveIcon />;
+          } else if (route.name === 'Settings') {
+            Icon = focused
+              ? <SettingsActiveIcon />
+              : <SettingsInactiveIcon />;
+          }
+
+          // You can return any component that you like here!
+          return Icon;
+        },
+      })}
+      
+      tabBarOptions={{
+        activeTintColor: GeneralColor.primary,
+        inactiveTintColor: GeneralColor.anotherGrey,
+      }}
+    >
+      <Tab.Screen name="PatientsHome" component={HomeScreen} />
+      <Tab.Screen name="patientsMessages" component={SettingsScreen} />
+      <Tab.Screen name="AppointMents" component={HomeScreen} />
+      <Tab.Screen name="Settings" component={SettingsScreen} />
+    </Tab.Navigator>
+  );
+}
