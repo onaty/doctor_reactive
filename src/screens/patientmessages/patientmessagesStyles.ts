@@ -3,22 +3,23 @@ import { color } from "react-native-reanimated";
 import { moderateScale, scale, verticalScale } from "react-native-size-matters";
 import { FontFamily } from "../../stylings/typography/typography";
 
-export const CopyPageStyles = StyleSheet.create({
+export const PatientmessagesStyles = StyleSheet.create({
 
-    maindiv: {
-        width: moderateScale(400),
-        height: verticalScale(450),
+    nochatsview: {
+        width: "100%",
+        height: "100%",
         padding: scale(10),
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        paddingBottom:verticalScale(250)
 
     },
-    welcomeText: {
+    nochats: {
         fontFamily: FontFamily.OpenSansSemiBold600,
         fontStyle: 'normal',
-        fontSize: moderateScale(24),
-        lineHeight: moderateScale(33),
+        fontSize: moderateScale(18),
+        lineHeight: moderateScale(25),
         textTransform: 'capitalize',
         color: '#373737'
 

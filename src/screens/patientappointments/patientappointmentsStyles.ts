@@ -8,8 +8,8 @@ export const PatientappointmentStyles = StyleSheet.create({
 
     scrollview: {
         width: '100%',
-     
-      
+
+        minHeight: '100%'
 
     },
     appointmentcard: {
@@ -54,10 +54,10 @@ export const PatientappointmentStyles = StyleSheet.create({
         lineHeight: scale(16),
     },
     statusdiv: {
-        height:'100%',
-        display:'flex',
-        flexDirection:'column',
-        justifyContent:'center'
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center'
     },
     infodiv: {
 
