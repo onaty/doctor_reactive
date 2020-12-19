@@ -1,28 +1,67 @@
+import { GeneralColor } from './../../stylings/general/colors';
 import { StyleSheet } from "react-native";
 import { color } from "react-native-reanimated";
-import { moderateScale, scale, verticalScale } from "react-native-size-matters";
+import { moderateScale, moderateVerticalScale, scale, verticalScale } from "react-native-size-matters";
 import { FontFamily } from "../../stylings/typography/typography";
 
-export const CopyPageStyles = StyleSheet.create({
+export const PatientappointmentStyles = StyleSheet.create({
 
-    maindiv: {
-        width: moderateScale(400),
-        height: verticalScale(450),
-        padding: scale(10),
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center'
+    scrollview: {
+        width: '100%',
+     
+      
 
     },
-    welcomeText: {
+    appointmentcard: {
+        width: '100%',
+        height: verticalScale(100),
+        padding: scale(20),
+        backgroundColor: GeneralColor.white,
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop: verticalScale(12)
+    },
+    doctorename: {
         fontFamily: FontFamily.OpenSansSemiBold600,
-        fontStyle: 'normal',
-        fontSize: moderateScale(24),
-        lineHeight: moderateScale(33),
+        fontSize: scale(14),
+        lineHeight: scale(19),
         textTransform: 'capitalize',
-        color: '#373737'
+        color: GeneralColor.solidgrey
+    },
+    date: {
+        fontFamily: FontFamily.OpenSansRegular400,
+        fontSize: scale(10),
+        lineHeight: scale(14),
+        color: GeneralColor.date
+    },
+    amount: {
+        fontFamily: FontFamily.OpenSansRegular400,
+        fontSize: scale(16),
+        lineHeight: scale(22),
+        color: GeneralColor.solidgrey
+    },
+    duration: {
+        fontFamily: FontFamily.OpenSansRegular400,
+        fontSize: scale(12),
+        lineHeight: scale(16),
+        color: GeneralColor.solidgrey
 
-    }
+    },
+    status: {
+        fontFamily: FontFamily.OpenSansRegular400,
+        fontSize: scale(12),
+        lineHeight: scale(16),
+    },
+    statusdiv: {
+        height:'100%',
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'center'
+    },
+    infodiv: {
+
+    },
 
 });
 

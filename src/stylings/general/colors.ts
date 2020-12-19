@@ -7,5 +7,6 @@ export const GeneralColor = {
     anotherGrey:'#AAAAAA',
     labels:'#454545',
     inappbackground:'#E5E5E5',
-    inappbackground2:'#DDE5ED'
+    inappbackground2:'#DDE5ED',
+    date:'#6D6D6D'
 }

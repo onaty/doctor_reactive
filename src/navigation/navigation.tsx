@@ -9,7 +9,7 @@ import { LoginScreen } from '../screens/loginscreen/loginscreen';
 import { GettingStartedScreen } from '../screens/gettingstarted/gettingstarted';
 import { SelectUsertypeScreen } from '../screens/selectusertype/selectusertypescreen';
 import BackButton from '../../assets/images/svg/backButton.svg';
-import { scale } from 'react-native-size-matters';
+import { moderateVerticalScale, scale } from 'react-native-size-matters';
 import { Dimensions } from "react-native";
 import { PatientSignupScreen } from '../screens/patientsignup/patientsignupscreen';
 import { SuccessPageScreen } from '../screens/successpage/successpagescreen';
@@ -109,8 +109,15 @@ function PatientsTabsStacks() {
       tabBarOptions={{
         activeTintColor: GeneralColor.primary,
         inactiveTintColor: GeneralColor.anotherGrey,
+        style:{
+          height:moderateVerticalScale(80),
+          paddingTop:moderateVerticalScale(10),
+          
+        }
+        
       }}
     
+      
     >
       <Tab.Screen name="PatientsHome" component={PatientdashboardScreen} options={{title:'Home'}}/>
       <Tab.Screen name="patientsMessages" component={PatientmessagesScreen} options={{title:'Messages'}} />
