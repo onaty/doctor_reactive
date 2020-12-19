@@ -26,6 +26,10 @@ import ApointMentsInactiveIcon from '../../assets/images/svg/tabs/appointmentico
 import SettingsActiveIcon from '../../assets/images/svg/tabs/settingsActiveicon.svg';
 import SettingsInactiveIcon from '../../assets/images/svg/tabs/settingsicon.svg';
 import { GeneralColor } from '../stylings/general/colors';
+import { SettingsScreen } from '../screens/settings/settingsscreen';
+import { PatientmessagesScreen } from '../screens/patientmessages/patientmessagesscreen';
+import { PatientappointmentsScreen } from '../screens/patientappointments/patientappointmentsscreen';
+import { PatientdashboardScreen } from '../screens/patientdashboard/patientdashboardscreen';
 
 const { width, height } = Dimensions.get("window");
 let headerHeight;
@@ -69,14 +73,6 @@ function HomeScreen() {
   );
 }
 
-function SettingsScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
-    </View>
-  );
-}
-
 const Tab = createBottomTabNavigator();
 
 function PatientsTabsStacks() {
@@ -109,16 +105,17 @@ function PatientsTabsStacks() {
           return Icon;
         },
       })}
-      
+
       tabBarOptions={{
         activeTintColor: GeneralColor.primary,
         inactiveTintColor: GeneralColor.anotherGrey,
       }}
+    
     >
-      <Tab.Screen name="PatientsHome" component={HomeScreen} />
-      <Tab.Screen name="patientsMessages" component={SettingsScreen} />
-      <Tab.Screen name="AppointMents" component={HomeScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
+      <Tab.Screen name="PatientsHome" component={PatientdashboardScreen} options={{title:'Home'}}/>
+      <Tab.Screen name="patientsMessages" component={PatientmessagesScreen} options={{title:'Messages'}} />
+      <Tab.Screen name="AppointMents" component={PatientappointmentsScreen} options={{title:'Appointments'}} />
+      <Tab.Screen name="Settings" component={SettingsScreen} options={{title:'Setting'}}/>
     </Tab.Navigator>
   );
 }

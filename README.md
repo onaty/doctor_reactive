@@ -5,3 +5,7 @@ courosel : https://blog.logrocket.com/using-react-native-to-implement-a-carousel
 bottommodal: https://www.npmjs.com/package/react-native-modal import Modal from 'react-native-modal';
 customtabbar: https://itnext.io/reactnative-curved-tabbar-dc62e681c24d
 besttabcumtom : https://dev.to/baptistearnaud/animated-sliding-tab-bar-in-react-native-58pb/react-native-tab-view
+
+
+
+TAKE NOTE : LEARN HOW TO STYLE THE PAGE
