@@ -30,6 +30,7 @@ import { SettingsScreen } from '../screens/settings/settingsscreen';
 import { PatientmessagesScreen } from '../screens/patientmessages/patientmessagesscreen';
 import { PatientappointmentsScreen } from '../screens/patientappointments/patientappointmentsscreen';
 import { PatientdashboardScreen } from '../screens/patientdashboard/patientdashboardscreen';
+import { ImageHeader } from '../components/headers/imageicon';
 
 const { width, height } = Dimensions.get("window");
 let headerHeight;
@@ -56,7 +57,8 @@ export const MainNavigation = () => {
         <Stack.Screen name="SelectUsertypeScreen" component={SelectUsertypeScreen} />
         <Stack.Screen name="PatientSignupScreen" component={PatientSignupScreen} />
         <Stack.Screen name="DoctorSignupScreen" component={DoctorSignupScreen} />
-        <Stack.Screen name="DoctorsDashboardScreen" component={DoctorsDashboardScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="DoctorsDashboardScreen"
+          component={DoctorsDashboardScreen} options={{ headerShown: false }} />
         <Stack.Screen name="PatientsTabsStacks" component={PatientsTabsStacks} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
@@ -83,7 +85,7 @@ function PatientsTabsStacks() {
         tabBarIcon: ({ focused, color, size }) => {
           let Icon;
 
-          if (route.name === 'PatientsHome') {
+          if (route.name === 'DashboardStack') {
             Icon = focused
               ? <HomeActiveIcon />
               : <HomeInactiveIcon />;
@@ -109,20 +111,47 @@ function PatientsTabsStacks() {
       tabBarOptions={{
         activeTintColor: GeneralColor.primary,
         inactiveTintColor: GeneralColor.anotherGrey,
-        style:{
-          height:moderateVerticalScale(80),
-          paddingTop:moderateVerticalScale(10),
-          
+        style: {
+          height: moderateVerticalScale(80),
+          paddingTop: moderateVerticalScale(10),
+
         }
-        
+
       }}
-    
-      
+
+
     >
-      <Tab.Screen name="PatientsHome" component={PatientdashboardScreen} options={{title:'Home'}}/>
-      <Tab.Screen name="patientsMessages" component={PatientmessagesScreen} options={{title:'Messages'}} />
-      <Tab.Screen name="AppointMents" component={PatientappointmentsScreen} options={{title:'Appointments'}} />
-      <Tab.Screen name="Settings" component={SettingsScreen} options={{title:'Setting'}}/>
+    
+      <Tab.Screen name="DashboardStack"
+        component={HomeStackScreen}
+        options={{
+          title: 'Home',
+
+
+
+        }} />
+      <Tab.Screen name="patientsMessages" component={PatientmessagesScreen} options={{ title: 'Messages' }} />
+      <Tab.Screen name="AppointMents" component={PatientappointmentsScreen} options={{ title: 'Appointments' }} />
+      <Tab.Screen name="Settings" component={SettingsScreen} options={{ title: 'Setting' }} />
     </Tab.Navigator>
   );
 }
+
+const HomeStack = createStackNavigator();
+
+function HomeStackScreen() {
+  return (
+    <HomeStack.Navigator>
+      <HomeStack.Screen 
+      name="PatientdashboardScreen"
+       component={PatientdashboardScreen} 
+       options={{
+         header:()=>{
+           return(<ImageHeader name={'Vick Uchena'} time={'Last seen 6 Aug 2019'}/>)
+         }
+       }}
+       />
+    </HomeStack.Navigator>
+  );
+}
+

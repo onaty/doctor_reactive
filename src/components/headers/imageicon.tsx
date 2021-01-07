@@ -1,12 +1,13 @@
 
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View } from 'react-native';
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import { GeneralColor } from '../../stylings/general/colors';
 import { FontFamily } from '../../stylings/typography/typography';
 
 import HeaderImage from '../../../assets/images/svg/headericonimage.svg';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { isIPhoneX, StatusBarHeight } from '../../navigation/header';
 // interface InputInterface {
 //     title?: string;
 //     value?: string;
@@ -17,11 +18,13 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export const ImageHeader = (props: any) => {
     const insets = useSafeAreaInsets();
+    console.log(StatusBarHeight, Platform.OS);
+
     return (
         <>
-            <View style={[ImageHeaderStyles.maindiv, { paddingTop: insets.top + verticalScale(15) }]}>
+            <View style={[ImageHeaderStyles.maindiv, { paddingTop: Platform.OS === 'ios' ? StatusBarHeight + 10 : 0, paddingBottom: Platform.OS === 'ios' ? verticalScale(10) : 0, height: Platform.OS === 'ios' ? verticalScale(85) :  verticalScale(65) , }]}>
                 <View style={[{ marginRight: moderateScale(10, .6) }]}>
-                    <HeaderImage  />
+                    <HeaderImage />
                 </View>
                 <View style={[]}>
                     <Text style={[ImageHeaderStyles.name]}>{props.name}</Text>
@@ -37,13 +40,12 @@ const ImageHeaderStyles = StyleSheet.create({
 
     maindiv: {
         width: '100%',
-        height: moderateScale(120, 0.2),
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: GeneralColor.white,
         paddingHorizontal: scale(15),
-        paddingBottom: verticalScale(20),
+
 
     },
     name: {

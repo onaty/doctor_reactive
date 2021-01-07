@@ -15,7 +15,7 @@ import { GeneralColor } from '../../stylings/general/colors';
 export const PatientdashboardScreen = () => {
     return (
         <View style={[{ backgroundColor: '#F7F7F7' }]}>
-            <ImageHeader name={'Vicky Uwaoma'} time={'Last seen 2 Aug 2020'} />
+           
             <ScrollView contentContainerStyle={[PatientdashboardStyles.maindiv]}>
                 <View style={{ marginBottom: verticalScale(20) }}>
                     <RequestDocCard />
